@@ -1,0 +1,150 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/edt_name_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/edt_status_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Status"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/edt_student_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Student"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/edt_live_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Live"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/edt_from_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="From"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/edt_jonined_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Jonined"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <info.hoang8f.widget.FButton
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="120dp"
+                    android:id="@+id/select"
+                    android:text="Select"
+                    android:textSize="22sp"
+                    android:textColor="#ffff"
+                    android:layout_height="60dp" />
+                <info.hoang8f.widget.FButton
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="120dp"
+                    android:id="@+id/upload"
+                    android:text="Upload"
+                    android:textSize="22sp"
+                    android:textColor="#ffff"
+                    android:layout_height="60dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</ScrollView>

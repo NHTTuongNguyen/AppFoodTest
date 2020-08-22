@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1C223C</color>
+    <color name="colorPrimaryDark">#1C223C</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorPurple">#983CFF</color>
+    <color name="colorPurpleT">#64983cff</color>
+    <color name="colorBlue">#2FB4FF</color>
+    <color name="colorBlueT">#642fb4ff</color>
+    <color name="overlayBackground">#7f333639</color>
+    <color name="overlayActionBar">#0e0d0e</color>
+    <color name="black">#000000</color>
+    <color name="grey">#bfbfbf</color>
+    <color name="colorIcons">#FFFFFF</color>
+    <color name="green">#01CF56</color>
+    <color name="colorLine">#dad6d6</color>
+    <color name="dark">#FF222222</color>
+    <color name="light">#FFEEEEEE</color>
+    <color name="my_statusbar_color">#FF0000</color>
+    <color name="textView_md">#626262</color>
+    <color name="view_md">#e3e3e4</color>
+    <color name="com_facebook_button_background_color_focused_disabled">#3C5A99</color>
+<color name="com_facebook_button_background_color_focused">#3C5A99</color>
+<color name="com_facebook_button_border_color_focused">#3C5A99</color>
+
+
+    <color name="about_us_Text">#636363</color>
+    <color name="colorforapp">#0B8B10</color>
+    <color name="about_us_SubText">#8b8b8b</color>
+    <color name="white">#FFFFFF</color>
+    <color name="textView_setting">#4A4A4A</color>
+    <color name="view_setting">#e3e3e4</color>
+    <color name="textView_fp_activity">#222224</color>
+    <color name="textView_fpDetail_activity">#515151</color>
+    <color name="category_bg_file_color">#80000000</color>
+    <color name="textView_home_fragment">#313131</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="textView_comment">#515151</color>
+    <color name="ratingBarNormal">#92A5AE</color>
+    <color name="ratingSelect">#FF9600</color>
+    <color name="unselect_indicater">#B3B3B3</color>
+
+    <color name="view_profile">#CDCDCD</color>
+    <color name="textView_hint_profile">#000000</color>
+    <color name="textView_profile">#FF929292</color>
+    <color name="cast">#979ca0</color>
+
+    <color name="bgRowBackground">#FA315B</color>
+</resources>

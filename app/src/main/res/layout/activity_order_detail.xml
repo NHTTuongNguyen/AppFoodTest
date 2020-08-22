@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activity.OrderDetail">
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/order_info"
+        android:layout_height="150dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="12dp"
+        app:cardElevation="4dp"
+        android:background="#FFF"
+        app:cardCornerRadius="6dp"
+        android:scrollbars="vertical"
+        android:elevation="20dp">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_height="22dp"
+                android:layout_alignParentTop="true"
+                android:background="#10336c" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/font_a"
+                        android:gravity="center_vertical|start"
+                        android:text="Order ID:"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/order_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/font_a"
+                        android:textColor="#37428b"
+                        android:gravity="center_vertical|start"
+                        android:text="#9999999"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/font_a"
+                        android:gravity="center_vertical|start"
+                        android:text="Phone:"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/order_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical|start"
+                        android:text="Phone"
+                        android:fontFamily="@font/font_a"
+                        android:textAllCaps="true"
+                        android:textColor="#262b39"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/font_a"
+                        android:gravity="center_vertical|start"
+                        android:text="Total:"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/order_total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical|start"
+                        android:text="Total"
+                        android:textColor="#262b39"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/font_a"
+
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/font_a"
+                        android:gravity="center_vertical|start"
+                        android:text="Address:"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/order_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical|start"
+                        android:text="Address"
+                        android:maxLines="3"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/font_a"
+                        android:textSize="16sp"
+                        android:textColor="#262b39"
+                        android:textStyle="bold"
+
+                        />
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/order_info"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp">
+
+            <View
+                android:id="@+id/view_latest"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:background="#FF1718" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/button_latest_home_fragment"
+                android:layout_toEndOf="@+id/view_latest"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Danh sách sản phẩm "
+                android:textColor="#313131"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button_latest_home_fragment"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/button_login_bg"
+                android:text="see all"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lstFoods"/>
+    </LinearLayout>
+
+</RelativeLayout>

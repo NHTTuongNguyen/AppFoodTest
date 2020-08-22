@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="215dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="12dp"
+    app:cardElevation="4dp"
+    android:background="#FFF"
+    app:cardCornerRadius="5dp"
+    android:scrollbars="vertical"
+    android:elevation="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="5.2dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="@color/colorBlue" />
+
+        <View
+            android:layout_width="5.2dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorBlue" />
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="7dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:background="#10336c" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/font_a"
+                    android:gravity="center_vertical|start"
+                    android:text="Name:"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txtName_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:text="Name"
+                    android:fontFamily="@font/font_a"
+                    android:textAllCaps="true"
+                    android:textColor="#262b39"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+
+                    />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/font_a"
+                    android:gravity="center_vertical|start"
+                    android:text="Phone:"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txtPhone_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:text="123456789"
+                    android:textAllCaps="true"
+                    android:textColor="#262b39"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/font_a"
+
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/font_a"
+                    android:gravity="center_vertical|start"
+                    android:text="Email:"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txtEmail_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:text="admin@gmail.com"
+                    android:textColor="#262b39"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/font_a"
+
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/font_a"
+                    android:gravity="center_vertical|start"
+                    android:text="Password:"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txtPaswword_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:text="Password"
+                    android:maxLines="3"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/font_a"
+                    android:textSize="16sp"
+                    android:textColor="#262b39"
+                    android:textStyle="bold"
+
+                    />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

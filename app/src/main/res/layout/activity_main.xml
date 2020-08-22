@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#fff"
+
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainActivity">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/hello2"/>
+
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WE WILL FIND THE BEST"
+
+            android:textSize="30dp"
+            android:textColor="#0B8B10"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="find the nearest plances with the"
+            android:textSize="20dp"
+            android:textColor="#0B8B10"
+            android:gravity="center"
+            />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="best organic foods and make your"
+            android:textSize="20dp"
+            android:textColor="#0B8B10"
+            android:gravity="center"
+            />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="life healthier!"
+            android:textSize="20dp"
+            android:textColor="#0B8B10"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:id="@+id/bt_dangnhapne"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgroud_login"
+                android:text="Let's Go" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

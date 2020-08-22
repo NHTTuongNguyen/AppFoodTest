@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:adjustViewBounds="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/image_category_other"
+                    android:scaleType="fitXY"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_marginLeft="15dp"
+                        android:id="@+id/tv_name_category_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hhuhuhuh"
+                        android:textColor="#1C223C"
+                        android:textSize="15dp" />
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:id="@+id/ij"
+                        android:layout_toRightOf="@+id/tv_name_category_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_done" />
+
+
+                    <TextView
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/tv_price_category_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$99999"
+                        android:textStyle="bold"
+                        android:textColor="#1C223C"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ăn Vặt"/>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+
+                        android:layout_marginLeft="15dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_star" />
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+
+                        android:text="4.5"
+                        android:id="@+id/tv_star_category_other"
+                        android:textColor="#1C223C"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="3dp"
+                        android:id="@+id/btnShare"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/sale2" />
+                    <TextView
+                        android:id="@+id/tv_sale"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#1C223C"
+                        android:text="Giảm 45% toàn menu..."
+                        android:textSize="11dp" />
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"/>
+
+</LinearLayout>

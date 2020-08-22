@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtName_list"
+            android:hint="Name"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edtDescription_list"
+            android:hint="Desc"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+            android:id="@+id/edtPrice_list"
+
+            android:hint="Price"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+            android:id="@+id/edtDiscount_list"
+            android:hint="Discount"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center"
+
+            android:layout_height="wrap_content">
+
+            <info.hoang8f.widget.FButton
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="120dp"
+                android:id="@+id/select_list"
+                android:text="Select"
+                android:layout_marginBottom="10dp"
+                android:textSize="22sp"
+                android:textColor="#ffff"
+                android:layout_height="wrap_content" />
+            <info.hoang8f.widget.FButton
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="120dp"
+                android:id="@+id/upload_list"
+                android:text="Upload"
+                android:textSize="22sp"
+                android:textColor="#ffff"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

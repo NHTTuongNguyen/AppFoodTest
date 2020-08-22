@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.EditUIProfile">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarEditUiProfile"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/white"
+                android:theme="@style/ToolbarColoredBackArrow"
+                app:titleTextColor="@android:color/black"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="20dp"
+            android:layout_weight="1"
+            android:textSize="20dp"
+
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile Picture" />
+
+        <TextView
+            android:padding="20dp"
+            android:textSize="20dp"
+            android:textColor="#FF5722"
+            android:gravity="right"
+            android:layout_weight="1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_gravity="center"
+            android:id="@+id/img_avatar_editprofile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/nature" />
+    </LinearLayout>
+    <View
+       android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="20dp"
+            android:layout_weight="1"
+            android:id="@+id/textView4"
+            android:textSize="20dp"
+
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cover Photo" />
+
+        <TextView
+            android:padding="20dp"
+            android:textSize="20dp"
+            android:textColor="#FF5722"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            app:cardElevation="4dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/img_anhbia_editprofile"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/nature"
+                    android:layout_height="200dp"
+                    android:layout_width="match_parent"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <View
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:padding="20dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name" />
+
+            <TextView
+                android:padding="20dp"
+                android:textSize="20dp"
+                android:textColor="#FF5722"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_name_editprofile"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Text"/>
+        </LinearLayout>
+        <View
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="20dp"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status" />
+
+        <TextView
+            android:padding="20dp"
+            android:textSize="20dp"
+            android:textColor="#FF5722"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_status_editprofile"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PS07603"/>
+    </LinearLayout>
+
+
+        <View
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+
+        <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="20dp"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Details" />
+
+        <TextView
+            android:padding="20dp"
+            android:textSize="20dp"
+            android:textColor="#FF5722"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit" />
+
+
+    </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:orientation="vertical"
+         android:layout_height="wrap_content">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+            >
+             <LinearLayout
+                 android:orientation="horizontal"
+                 android:paddingLeft="25dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+                 <ImageView
+                     android:layout_width="26dp"
+                     android:layout_height="26dp"
+                     android:src="@drawable/ic_profile_school"/>
+                 <TextView
+                     android:id="@+id/tv_student_editprofile"
+                     android:textStyle="bold"
+                     android:textSize="15dp"
+                     android:layout_gravity="center_vertical"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:paddingLeft="20dp"
+                     android:text="Studied Mobile Programming at Cao Dang Thuc Hanh FPT Polytechnic HCM"/>
+             </LinearLayout>
+             <LinearLayout
+                 android:layout_marginTop="25dp"
+                 android:orientation="horizontal"
+                 android:paddingLeft="25dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+                 <ImageView
+                     android:layout_width="26dp"
+                     android:layout_height="26dp"
+                     android:src="@drawable/ic_profile_city"/>
+                 <TextView
+                     android:id="@+id/tv_live_editprofile"
+                     android:textStyle="bold"
+                     android:layout_gravity="center_vertical"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:paddingLeft="20dp"
+                     android:textSize="15dp"
+                     android:text="Live in Ho Chi Minh, Viet Nam"/>
+             </LinearLayout>
+             <LinearLayout
+                 android:layout_marginTop="25dp"
+                 android:orientation="horizontal"
+                 android:paddingLeft="25dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+                 <ImageView
+                     android:layout_width="26dp"
+                     android:layout_height="26dp"
+                     android:src="@drawable/ic_profile_location"/>
+                 <TextView
+                     android:textStyle="bold"
+                     android:id="@+id/tv_from_editprofile"
+                     android:textSize="15dp"
+                     android:layout_gravity="center_vertical"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:paddingLeft="20dp"
+                     android:text="From Thap Muoi"/>
+             </LinearLayout>
+             <LinearLayout
+                 android:layout_marginTop="25dp"
+                 android:orientation="horizontal"
+                 android:paddingLeft="25dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+                 <ImageView
+                     android:layout_width="26dp"
+                     android:layout_height="26dp"
+                     android:src="@drawable/ic_profile_joined"/>
+                 <TextView
+                     android:textSize="15dp"
+                     android:textStyle="bold"
+                     android:id="@+id/tv_jonined_editprofile"
+                     android:layout_gravity="center_vertical"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:paddingLeft="20dp"
+                     android:text="Jonined Angust 2015"/>
+             </LinearLayout>
+         </LinearLayout>
+     </LinearLayout>
+        <View
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+    </LinearLayout>
+</ScrollView>

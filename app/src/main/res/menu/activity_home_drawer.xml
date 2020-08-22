@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_menu"
+            android:title="Meunu" />
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/ic_cart"
+            android:title="Cart" />
+        <item
+            android:id="@+id/nav_orthers"
+            android:icon="@drawable/ic_order"
+            android:title="Others" />
+        <item
+            android:id="@+id/nav_test"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Google Map" />
+        <item
+            android:id="@+id/nav_change_Passwrod"
+            android:icon="@drawable/ic_change_password"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/nav_info_Customer"
+            android:icon="@drawable/ic_change_password"
+            android:title="My Information" />
+        <item
+            android:id="@+id/nav_AddressHome"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Address Home" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_team"
+                android:icon="@drawable/ic_team"
+                android:title="My Team" />
+            <item
+                android:id="@+id/log_out"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Sign out" />
+        </menu>
+    </item>
+
+</menu>

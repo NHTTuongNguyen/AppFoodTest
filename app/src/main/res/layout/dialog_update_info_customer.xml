@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="12dp"
+    app:cardElevation="4dp"
+    android:background="#FFF"
+    app:cardCornerRadius="5dp"
+    android:scrollbars="vertical"
+    android:elevation="20dp">
+
+
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="7dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorforapp" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/font_a"
+                    android:gravity="center_vertical|start"
+                    android:text="Name:"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+
+                    />
+
+                <EditText
+                    android:id="@+id/edtNameInfoCustomer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:hint="Name"
+                    android:maxLines="3"
+                    android:fontFamily="@font/font_a"
+                    android:textSize="16sp"
+                    android:textColor="#262b39"
+                    android:textStyle="bold"
+
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/font_a"
+                    android:gravity="center_vertical|start"
+                    android:text="Email:"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+
+                    />
+
+                <EditText
+                    android:id="@+id/edtEmailInfoCustomer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:hint="Email"
+                    android:maxLines="3"
+                    android:fontFamily="@font/font_a"
+                    android:textSize="16sp"
+                    android:textColor="#262b39"
+                    android:textStyle="bold"
+
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/font_a"
+                    android:gravity="center_vertical|start"
+                    android:text="Phone:"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+
+                    />
+
+                <EditText
+                    android:inputType="phone"
+                    android:id="@+id/edtPhoneInfoCustomer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:hint="Address"
+                    android:maxLines="3"
+                    android:fontFamily="@font/font_a"
+                    android:textSize="16sp"
+                    android:textColor="#262b39"
+                    android:textStyle="bold"
+
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/font_a"
+
+                    android:text="Password:"
+                    android:textStyle="italic"
+
+                    android:textSize="16sp"
+                    />
+
+                <EditText
+                    android:id="@+id/edtPasswordInfoCustomer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/font_a"
+                    android:textColor="#37428b"
+                    android:hint="Password"
+
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
