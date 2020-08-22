@@ -14,7 +14,6 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.Tuimoitaone"></activity>
+        <activity android:name=".Activity.MainActivity2"></activity>
+        <activity android:name=".Activity.Tuimoitaone" />
         <activity android:name=".Activity.OrderDetail" />
 
         <service
@@ -86,12 +86,7 @@
         <activity
             android:name=".Activity.Welcome"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeLogin">
-
-
-
-
-        </activity>
+            android:theme="@style/AppThemeLogin"></activity>
         <activity
             android:name=".Activity.EditUIProfile"
             android:screenOrientation="portrait"
@@ -99,7 +94,7 @@
         <activity
             android:name=".Activity.UIProfile"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeOrder"/>
+            android:theme="@style/AppThemeOrder" />
         <activity android:name=".Activity.TestEmpty" />
         <activity
             android:name=".Activity.MyTeam"
