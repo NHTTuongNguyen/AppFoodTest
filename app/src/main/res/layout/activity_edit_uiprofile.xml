@@ -73,7 +73,7 @@
             android:id="@+id/img_avatar_editprofile"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/nature" />
+          />
     </LinearLayout>
     <View
        android:layout_margin="20dp"

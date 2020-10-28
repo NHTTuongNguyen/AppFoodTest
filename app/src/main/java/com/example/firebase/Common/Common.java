@@ -20,8 +20,7 @@ public class Common {
 
     public static final String INTENT_FOOD_ID = "FoodId";
 
-    public static  boolean isConnectedtoInternet(Context context)
-    {
+    public static  boolean isConnectedtoInternet(Context context) {
         ConnectivityManager connectivityManager= (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null)
         {
@@ -47,8 +46,7 @@ public class Common {
             return "Shipped";
     }
 
-    public static String getDate(long time)
-    {
+    public static String getDate(long time) {
         Calendar calendar  = Calendar.getInstance(Locale.ENGLISH);
         calendar.setTimeInMillis(time);
         StringBuilder date  = new StringBuilder(

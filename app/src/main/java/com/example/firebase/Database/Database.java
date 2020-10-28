@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
+import android.util.Log;
 
 import com.example.firebase.Model.Order;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
@@ -36,7 +37,6 @@ public class Database extends SQLiteAssetHelper {
                         c.getString(c.getColumnIndex("Discount")),
                         c.getString(c.getColumnIndex("Image"))
                 ));
-
             }while (c.moveToNext());
         }
         return result;
@@ -84,8 +84,7 @@ public class Database extends SQLiteAssetHelper {
         db.execSQL(query);
     }
 
-    public  boolean isFavorites (String foodId)
-    {
+    public  boolean isFavorites (String foodId) {
         SQLiteDatabase db = getReadableDatabase();
         String query = String.format("SELECT * FROM Favorites WHERE FoodId='%s';",foodId);
         Cursor cursor = db.rawQuery(query,null);
@@ -98,20 +97,21 @@ public class Database extends SQLiteAssetHelper {
         return true;
     }
 
-    public int  getCountCart() {
-        int count=0;
-        SQLiteDatabase db = getReadableDatabase();
-        String query = String.format("SELECT COUNT(*) FROM OrderDetail");
-        Cursor cursor = db.rawQuery(query,null);
-        if(cursor.moveToFirst())
-        {
-           do{
-               count = cursor.getInt(0);
-           }while (cursor.moveToNext());
-        }
+        public int  getCountCart() {
+            int count=0;
+            SQLiteDatabase db = getReadableDatabase();
+            String query = String.format("SELECT COUNT(*) FROM OrderDetail");
+            Cursor cursor = db.rawQuery(query,null);
+            if(cursor.moveToFirst())
+            {
+               do{
+                   count = cursor.getInt(0);
+               }while (cursor.moveToNext());
+            }
+            Log.d("getCountStory", String.valueOf(count));
 
-        return count;
-    }
+            return count;
+        }
 
 
 }

@@ -16,12 +16,12 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_addlist"
             app:backgroundTint="@color/white"
-            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
             app:srcCompat="@drawable/ic_cart_black"
+            android:clickable="true"
             tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
 

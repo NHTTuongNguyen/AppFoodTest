@@ -1,21 +1,17 @@
 package com.example.firebase.ViewHolder;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.firebase.Common.Common;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.firebase.Interface.ItemClickListener;
 import com.example.firebase.R;
 
-public class MenuViewHold extends RecyclerView.ViewHolder implements
-        View.OnClickListener,
-        View.OnCreateContextMenuListener
-
-{
+public class MenuViewHold extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener{
 
     public TextView txtMenuName;
     public ImageView imageView;
