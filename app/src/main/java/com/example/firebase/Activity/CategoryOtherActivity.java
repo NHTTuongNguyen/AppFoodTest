@@ -76,7 +76,7 @@ public class CategoryOtherActivity extends AppCompatActivity implements RatingDi
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CategoryOtherActivity.this,Cart.class);
+                Intent intent = new Intent(CategoryOtherActivity.this, CartActivity.class);
                 startActivity(intent);
             }
         });

@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
         img_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Login.this,Register.class);
+                Intent i = new Intent(Login.this, RegisterActivity.class);
                 startActivity(i);
             }
         });
@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i  = new Intent(Login.this,Register.class);
+                Intent i  = new Intent(Login.this, RegisterActivity.class);
                 startActivity(i);
             }
         });
@@ -98,7 +98,7 @@ public class Login extends AppCompatActivity {
                                 User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
                                 user.setPhone(edtPhone.getText().toString());
                                 if (user.getPassword().equals(et_password.getText().toString())) {
-                                    Intent intent = new Intent(Login.this, Home.class);
+                                    Intent intent = new Intent(Login.this, HomeActivity.class);
                                     Common.currentUser = user;
                                     startActivity(intent);
                                     finish();

@@ -34,9 +34,11 @@ import com.stepstone.apprating.listener.RatingDialogListener;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.text.NumberFormat;
 import java.util.Arrays;
+import java.util.Locale;
 
-public class FoodDetail extends AppCompatActivity implements RatingDialogListener {
+public class FoodDetailActivity extends AppCompatActivity implements RatingDialogListener {
 
     TextView tv_name,tv_price,tv_description;
     ImageView food_image,img_feedback;
@@ -80,7 +82,7 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
         counterFab_Cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(FoodDetail.this,Cart.class);
+                Intent i = new Intent(FoodDetailActivity.this, CartActivity.class);
                 startActivity(i);
             }
         });
@@ -96,11 +98,11 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
                         currentFood.getImage()
                 ));
                 finish();
-                Toast.makeText(FoodDetail.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FoodDetailActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
             }
         });
 //
-        counterFab_Cart.setCount(new Database(this).getCountCart());
+        setCount();
         TextView tv_feedback_name = findViewById(R.id.tv_feedback_name_food_detail);
         TextView tv_feedback_phone = findViewById(R.id.tv_feedback_phone_food_detail);
         TextView tv_feedback_email = findViewById(R.id.tv_feedback_email_food_detail);
@@ -110,34 +112,38 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
 
 
         ///get car id from intent
-        if (getIntent()!= null)
-            foodId = getIntent().getStringExtra("FoodId");
-
-        if (foodId!= null && !foodId.isEmpty()){
-            if (Common.isConnectedtoInternet(getBaseContext())) {
-                loadFoodDetail(foodId);
-                getRatingFood(foodId);
+        Intent intent = getIntent();
+        if (intent != null) {
+            if (intent.hasExtra("FoodId")) {
+                foodId = getIntent().getStringExtra("FoodId");
+                if (foodId != null && !foodId.isEmpty()) {
+                    if (Common.isConnectedtoInternet(getBaseContext())) {
+                        loadFoodDetail(foodId);
+                        getRatingFood(foodId);
+                    } else {
+                        Toast.makeText(this, "Please check your connection", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
-            else {
-                Toast.makeText(this, "Please check your connection", Toast.LENGTH_SHORT).show();
+            if (intent.hasExtra("CategoryOtherId")){
+                categoryId = getIntent().getStringExtra("CategoryOtherId");
+                if (categoryId != null && !categoryId.isEmpty()){
+                    if (Common.isConnectedtoInternet(getBaseContext())) {
+                        loadFoodCategoryId(categoryId);
+//                      getRatingFood(categoryId);
+                    }
+                    else {
+                        Toast.makeText(this, "Please check your connection", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         }
-        if (getIntent()!= null)
-            categoryId = getIntent().getStringExtra("CategoryOtherId");
-
-        if (categoryId!= null && !categoryId.isEmpty()){
-            if (Common.isConnectedtoInternet(getBaseContext())) {
-                loadFoodCategoryId(categoryId);
-//                getRatingFood(categoryId);
-            }
-            else {
-                Toast.makeText(this, "Please check your connection", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-
     }
 
+    private void setCount() {
+        counterFab_Cart.setCount(new Database(this).getCountCart());
+
+    }
 
 
     private void loadFoodDetail(String foodId) {
@@ -149,7 +155,11 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
                         .placeholder(R.drawable.imgerror)
                         .error(R.drawable.imgerror)
                         .into(food_image);
-                tv_price.setText(currentFood.getPrice());
+                int price = Integer.parseInt(currentFood.getPrice());
+
+                Locale locale = new Locale("vi","VN");
+                NumberFormat fmt =NumberFormat.getCurrencyInstance(locale);
+                tv_price.setText(fmt.format(price));
                 tv_name.setText(currentFood.getName());
                 tv_description.setText(currentFood.getDescription());
             }
@@ -165,14 +175,17 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
         databaseReference_CategoryId.child(categoryId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                current_CategoryOther = dataSnapshot.getValue(CategoryOther.class);
-                Picasso.with(getBaseContext()).load(current_CategoryOther.getImage())
+                currentFood = dataSnapshot.getValue(Food.class);
+                Picasso.with(getBaseContext()).load(currentFood.getImage())
                         .placeholder(R.drawable.imgerror)
                         .error(R.drawable.error)
                         .into(food_image);
-                tv_price.setText(current_CategoryOther.getPrice());
-                tv_name.setText(current_CategoryOther.getName());
-                tv_description.setText(current_CategoryOther.getDescription());
+                int price = Integer.parseInt(currentFood.getPrice());
+                Locale locale = new Locale("vi","VN");
+                NumberFormat fmt =NumberFormat.getCurrencyInstance(locale);
+                tv_price.setText(fmt.format(price));
+                tv_name.setText(currentFood.getName());
+                tv_description.setText(currentFood.getDescription());
             }
 
             @Override
@@ -238,7 +251,7 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
                 .setCommentTextColor(R.color.white)
                 .setCommentBackgroundColor(R.color.colorPrimary)
                 .setWindowAnimation(R.style.RatingDialogFadeAnim)
-                .create(FoodDetail.this)
+                .create(FoodDetailActivity.this)
                 .show();
     }
 
@@ -268,7 +281,7 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
                 else {
                     /// Update new value
                     ratingTb1.child(Common.currentUser.getPhone()).child(foodId).setValue(rating);
-                    Toast.makeText(FoodDetail.this, "Thank you for submit rating", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FoodDetailActivity.this, "Thank you for submit rating", Toast.LENGTH_SHORT).show();
                     finish();
                 }
 
@@ -288,5 +301,11 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

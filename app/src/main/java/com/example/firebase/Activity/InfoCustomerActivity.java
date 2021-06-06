@@ -19,7 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class InfoCustomer extends AppCompatActivity {
+public class InfoCustomerActivity extends AppCompatActivity {
 
     TextView tv_name,tv_email,tv_phone,tv_password;
     FloatingActionButton floatingActionButton;
@@ -60,7 +60,7 @@ public class InfoCustomer extends AppCompatActivity {
     }
 
     private void showDiaLog() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(InfoCustomer.this);
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(InfoCustomerActivity.this);
         LayoutInflater inflater = this.getLayoutInflater();
         View add_menu_layout = inflater.inflate(R.layout.dialog_update_info_customer,null);
         edtName = add_menu_layout.findViewById(R.id.edtNameInfoCustomer);

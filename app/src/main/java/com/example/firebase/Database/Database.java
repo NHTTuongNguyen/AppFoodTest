@@ -114,4 +114,8 @@ public class Database extends SQLiteAssetHelper {
         }
 
 
+    public void removeAllCart() {
+        SQLiteDatabase db = this.getWritableDatabase(); // helper is object extends SQLiteOpenHelper
+        db.delete("OrderDetail", null, null);
+    }
 }

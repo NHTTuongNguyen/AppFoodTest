@@ -13,7 +13,7 @@ import com.example.firebase.Model.Team;
 import com.example.firebase.R;
 import com.squareup.picasso.Picasso;
 
-public class EditUIProfile extends AppCompatActivity {
+public class EditUIProfileActivity extends AppCompatActivity {
     ImageView img_avatar,img_anhbia;
     TextView tv_nameeditprofile,
              tv_statuseditprofile,

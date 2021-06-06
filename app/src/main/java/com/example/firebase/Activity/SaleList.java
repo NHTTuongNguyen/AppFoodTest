@@ -42,7 +42,7 @@ public class SaleList extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SaleList.this,Cart.class);
+                Intent intent = new Intent(SaleList.this, CartActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,6 +54,7 @@ public class SaleList extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("SaleDetailTuongAZ");
+
 
 
         if (getIntent() != null) {
@@ -88,7 +89,7 @@ public class SaleList extends AppCompatActivity {
                 saleDetailViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Intent intent = new Intent(SaleList.this,SaleDetail.class);
+                        Intent intent = new Intent(SaleList.this, SaleDetailActivity.class);
                         intent.putExtra("SaleDetailId",adapter.getRef(i).getKey());
                         startActivity(intent);
                     }

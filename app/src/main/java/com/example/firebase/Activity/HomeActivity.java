@@ -36,8 +36,7 @@ import com.example.firebase.GoogleMap.MapsActivity;
 import com.example.firebase.Interface.ItemClickListener;
 import com.example.firebase.Model.Banner;
 import com.example.firebase.Model.Category;
-import com.example.firebase.Model.Category2;
-import com.example.firebase.Model.CategoryOther;
+import com.example.firebase.Model.Food;
 import com.example.firebase.R;
 import com.example.firebase.Service.ListenOrder;
 import com.example.firebase.ViewHolder.MenuViewHold;
@@ -56,20 +55,22 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
 import java.util.HashMap;
+import java.util.Locale;
 
 import info.hoang8f.widget.FButton;
 import io.paperdb.Paper;
 
-public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseDatabase database,database_CategoryOther,database_Sale;
     DatabaseReference category, databaseReference_CategoryOther,databaseReference_Sale;
     TextView txtFullName,txtFullEmail,txtFullPhone;
     RecyclerView recyler_menu,recyler_menu2,recyler_Other;
     RecyclerView.LayoutManager layoutManager;
     FirebaseRecyclerAdapter<Category,  MenuViewHold>adapter;
-    FirebaseRecyclerAdapter<Category2, MenuViewHolder2>adapter_Sale;
-    FirebaseRecyclerAdapter<CategoryOther, MenuViewHoldOther>adapter_Other;
+    FirebaseRecyclerAdapter<Category, MenuViewHolder2>adapter_Sale;
+    FirebaseRecyclerAdapter<Food, MenuViewHoldOther>adapter_Other;
     EditText edtName;
     FButton btnUpload,btnSelect;
     CounterFab counterFab;
@@ -112,17 +113,23 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         recyler_Other.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyler_Other.setLayoutManager(layoutManager);
-
+        recyler_Other.setFocusable(false);
+        recyler_Other.setNestedScrollingEnabled(false);
 
         recyler_menu2 = findViewById(R.id.recycler_menu2);
         recyler_menu2.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyler_menu2.setLayoutManager(layoutManager);
+
+        recyler_menu2.setFocusable(false);
+        recyler_menu2.setNestedScrollingEnabled(false);
         ///////
         recyler_menu = findViewById(R.id.recycler_menu);
         recyler_menu.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyler_menu.setLayoutManager(layoutManager);
+        recyler_menu.setFocusable(false);
+        recyler_menu.setNestedScrollingEnabled(false);
 
 
 
@@ -133,16 +140,18 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         }else {
             Toast.makeText(this, "Please check your connect", Toast.LENGTH_SHORT).show();
         }
-        CounterFab counterFab =  findViewById(R.id.counterFab_Home);
+        counterFab =  findViewById(R.id.counterFab_Home);
         counterFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             Intent i = new Intent(Home.this,Cart.class);
+             Intent i = new Intent(HomeActivity.this, CartActivity.class);
              startActivity(i);
             }
         });
-        counterFab.setCount(new Database(this).getCountCart());
 
+        setCount();
+//        Database database = new Database(this);
+//        counterFab.setCount(database.getCountCart());
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -161,22 +170,30 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         txtFullEmail = hearderView.findViewById(R.id.txtFullEmail);
         txtFullName=hearderView.findViewById(R.id.txtFullName);
 //        txtFullPhone = hearderView.findViewById(R.id.txtFullPhone);
-
-        txtFullEmail.setText(Common.currentUser.getEmail());
-        txtFullName.setText(Common.currentUser.getName());
+        if (Common.currentUser != null) {
+            txtFullEmail.setText(Common.currentUser.getEmail());
+            txtFullName.setText(Common.currentUser.getName());
 //        txtFullPhone.setText(Common.currentUser.getPhone());
+        }
 
 
 
 
-
-        Intent service = new Intent(Home.this, ListenOrder.class);
+        Intent service = new Intent(HomeActivity.this, ListenOrder.class);
         startService(service);
 
         //Register Service
 
 
 
+    }
+
+    public void setCount() {
+        Database database = new Database(this);
+        if (database!=null){
+//            counterFab.setCount(new Database(this).getCountCart());
+            counterFab.setCount(database.getCountCart());
+        }
     }
 
     @Override
@@ -193,13 +210,19 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     private void loadMenu_Other() {
-        adapter_Other = new FirebaseRecyclerAdapter<CategoryOther, MenuViewHoldOther>
-                (CategoryOther.class,R.layout.item_category_other, MenuViewHoldOther.class, databaseReference_CategoryOther) {
+        adapter_Other = new FirebaseRecyclerAdapter<Food, MenuViewHoldOther>(Food.class,R.layout.item_category_other, MenuViewHoldOther.class, databaseReference_CategoryOther) {
             @Override
-            protected void populateViewHolder(MenuViewHoldOther viewHolder, CategoryOther model, int position) {
+            protected void populateViewHolder(MenuViewHoldOther viewHolder, Food model, int position) {
                 viewHolder.tv_name_category_other.setText(model.getName());
-                viewHolder.tv_price_category_other.setText(model.getPrice());
-                viewHolder.tv_price_category_other.setText(String.format("$ %s",model.getPrice()));
+
+                int price = Integer.parseInt(model.getPrice());
+
+                Locale locale = new Locale("vi","VN");
+                NumberFormat fmt =NumberFormat.getCurrencyInstance(locale);
+
+                viewHolder.tv_price_category_other.setText(fmt.format(price));
+
+
                 viewHolder.tv_star_category_other.setText(model.getStar());
 
                 Picasso.with(getBaseContext()).load(model.getImage())
@@ -210,21 +233,22 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Intent i = new Intent(Home.this,CategoryOtherActivity.class);
+//                        Intent i = new Intent(Home.this,CategoryOtherActivity.class);
+                        Intent i = new Intent(HomeActivity.this, FoodDetailActivity.class);
+
                         i.putExtra("CategoryOtherId",adapter_Other.getRef(position).getKey());
                         startActivity(i);
                     }
                 });
-
-
             }
+
+//
         };
 
         recyler_Other.setAdapter(adapter_Other);
 
         adapter_Other.notifyDataSetChanged();
 
-        recyler_Other.setNestedScrollingEnabled(false);
 
     }
     private void loadMenu() {
@@ -239,8 +263,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 //                viewHolder.txtMenuName.setBackgroundColor(currentColor);
                 viewHolder.txtMenuName.setText(model.getName());
                 Picasso.with(getBaseContext()).load(model.getImage())
-                        .placeholder(R.drawable.imgerror)
-                        .error(R.drawable.imgerror)
+//                        .placeholder(R.drawable.imgerror)
+//                        .error(R.drawable.imgerror)
                         .into(viewHolder.imageView);
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
@@ -253,8 +277,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 
-                        Intent i = new Intent(Home.this,FoodList.class);
+                        Intent i = new Intent(HomeActivity.this, FoodListActivity.class);
                         i.putExtra("CategoryId",adapter.getRef(position).getKey());
+
                         startActivity(i);
 
                     }
@@ -263,15 +288,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         };
 
         recyler_menu.setAdapter(adapter);
-        recyler_menu.setNestedScrollingEnabled(false);
+//        recyler_menu.setNestedScrollingEnabled(false);
         adapter.notifyDataSetChanged();
-//        swipeRefreshLayout.setRefreshing(false);
     }
     private void loadMenu2() {
-        adapter_Sale = new FirebaseRecyclerAdapter<Category2, MenuViewHolder2>
-                (Category2.class,R.layout.menu_item2,MenuViewHolder2.class,databaseReference_Sale) {
+        adapter_Sale = new FirebaseRecyclerAdapter<Category, MenuViewHolder2>
+                (Category.class,R.layout.menu_item2,MenuViewHolder2.class,databaseReference_Sale) {
             @Override
-            protected void populateViewHolder(MenuViewHolder2 viewHolder, final Category2 model, int position) {
+            protected void populateViewHolder(MenuViewHolder2 viewHolder, final Category model, int position) {
                 viewHolder.txtMenuName2.setText(model.getName());
 //                if (position==0){
 //                    viewHolder.tv_sale.setBackgroundColor(getResources().getColor(R.color.my_statusbar_color));
@@ -300,8 +324,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        final Category2 category2 = model;
-                        Intent i = new Intent(Home.this,SaleList.class);
+                        final Category category2 = model;
+                        Intent i = new Intent(HomeActivity.this, FoodListActivity.class);
                         i.putExtra("SaleId",adapter_Sale.getRef(position).getKey());
                         startActivity(i);
                     }
@@ -311,7 +335,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         };
         recyler_menu2.setAdapter(adapter_Sale);
         adapter_Sale.notifyDataSetChanged();
-        recyler_menu2.setNestedScrollingEnabled(false);
 
     }
 
@@ -346,7 +369,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                             .setOnSliderClickListener(new BaseSliderView.OnSliderClickListener() {
                                 @Override
                                 public void onSliderClick(BaseSliderView slider) {
-                                    Intent intent  = new Intent(Home.this,FoodDetail.class);
+                                    Intent intent  = new Intent(HomeActivity.this, FoodDetailActivity.class);
                                     intent.putExtras(textSliderView.getBundle());
                                     startActivity(intent);
                                 }
@@ -396,7 +419,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(Home.this,InfoCustomer.class);
+            Intent intent = new Intent(HomeActivity.this, InfoCustomerActivity.class);
             startActivity(intent);
             return true;
         }
@@ -414,15 +437,15 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
 
         } else if (id == R.id.nav_cart) {
-            Intent activityCart = new Intent(Home.this,Cart.class);
+            Intent activityCart = new Intent(HomeActivity.this, CartActivity.class);
             startActivity(activityCart);
 
         } else if (id == R.id.nav_orthers) {
-            Intent activityOrder = new Intent(Home.this,OrderStatus.class);
+            Intent activityOrder = new Intent(HomeActivity.this, OrderStatusActivity.class);
             startActivity(activityOrder);
 
         } else if (id == R.id.nav_test) {
-            Intent map = new Intent(Home.this, MapsActivity.class);
+            Intent map = new Intent(HomeActivity.this, MapsActivity.class);
             startActivity(map);
         }
         else if(id == R.id.nav_change_Passwrod){
@@ -430,7 +453,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         }
         else if(id == R.id.nav_info_Customer){
 
-            Intent infoCustomer = new Intent(Home.this, InfoCustomer.class);
+            Intent infoCustomer = new Intent(HomeActivity.this, InfoCustomerActivity.class);
             startActivity(infoCustomer);
         }
         else if(id == R.id.nav_AddressHome){
@@ -438,14 +461,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             showDiaLogAddressHome();
         }
         else if (id == R.id.nav_team) {
-            Intent team = new Intent(Home.this,MyTeam.class);
+            Intent team = new Intent(HomeActivity.this, MyTeamActivity.class);
             startActivity(team);
         } else if (id == R.id.log_out) {
 
             /// delete Remember me user and password
             Paper.book().destroy();
             ///out
-            Intent activityOut = new Intent(Home.this,Login.class);
+            Intent activityOut = new Intent(HomeActivity.this,Login.class);
             activityOut.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(activityOut);
 
@@ -457,7 +480,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     private void showDiaLogAddressHome() {
-        AlertDialog.Builder alerdialog = new AlertDialog.Builder(Home.this);
+        AlertDialog.Builder alerdialog = new AlertDialog.Builder(HomeActivity.this);
         alerdialog.setTitle("Add Address For User");
         alerdialog.setMessage("Info");
         LayoutInflater  inflater  = this.getLayoutInflater();
@@ -477,7 +500,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                Toast.makeText(Home.this, "Add Address Successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(HomeActivity.this, "Add Address Successful", Toast.LENGTH_SHORT).show();
                             }
                         });
 

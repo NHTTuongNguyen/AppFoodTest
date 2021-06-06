@@ -13,7 +13,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
-import com.example.firebase.Activity.Cart;
+import com.example.firebase.Activity.CartActivity;
 import com.example.firebase.Database.Database;
 import com.example.firebase.Model.Order;
 import com.example.firebase.R;
@@ -73,8 +73,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHold> {
                         new Database(context).cleanCart();
                         for (Order item:listData)
                             new Database(context).addToCart(item);
-                        ((Cart)context).loadListCart();
+                        ((CartActivity)context).loadListCart();
                         Toast.makeText(context, order.getProductName()+" was deleted", Toast.LENGTH_SHORT).show();
+//                        ((FoodList)context).setCount();
                     }
                 });
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {

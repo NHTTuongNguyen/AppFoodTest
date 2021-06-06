@@ -22,7 +22,7 @@ import com.squareup.picasso.Picasso;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class MyTeam extends AppCompatActivity {
+public class MyTeamActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference team;
@@ -84,7 +84,7 @@ public class MyTeam extends AppCompatActivity {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Intent i = new Intent(MyTeam.this,UIProfile.class);
+                        Intent i = new Intent(MyTeamActivity.this,UIProfile.class);
                         i.putExtra("TeamId",adapter.getRef(position).getKey());
                         startActivity(i);
 

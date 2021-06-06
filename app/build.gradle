@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.example.firebase"
-        minSdkVersion 19
-        targetSdkVersion 27
+        minSdkVersion 23
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         multiDexEnabled true //Add this
@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+//    buildFeatures {
+//        viewBinding = true
+//        dataBinding = true
+//    }
 }
 
 dependencies {
@@ -85,7 +89,11 @@ dependencies {
     implementation 'io.github.inflationx:viewpump:1.0.0'
 
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
-
+    //support multi screen
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.google.android.libraries.places:places:2.4.0'
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
 
 //    implementation 'com.google.android.ads.consent:consent-library:1.0.7'
 //    implementation 'com.onesignal:OneSignal:3.+@aar'

@@ -24,7 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
-public class OrderStatus extends AppCompatActivity {
+public class OrderStatusActivity extends AppCompatActivity {
     public RecyclerView recyclerView;
     public RecyclerView.LayoutManager layoutManager;
     FirebaseRecyclerAdapter<Request, OrderViewHolder>adapter;
@@ -100,7 +100,7 @@ public class OrderStatus extends AppCompatActivity {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 //
-                        Intent intent = new Intent(OrderStatus.this,OrderDetail.class);
+                        Intent intent = new Intent(OrderStatusActivity.this, OrderDetailActivity.class);
                         Common.currentRequest = model;
                         intent.putExtra("OrderId",adapter.getRef(position).getKey());
                         startActivity(intent);
@@ -113,7 +113,7 @@ public class OrderStatus extends AppCompatActivity {
                 viewHolder.imageViewDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(OrderStatus.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(OrderStatusActivity.this);
                         builder.setTitle("Delete Your Order");
                         builder.setMessage("Do you want to delete it ?");
                         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -167,7 +167,7 @@ public class OrderStatus extends AppCompatActivity {
 
 
     private void showUpdateDiaLog(String key, final Request item) {
-        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(OrderStatus.this);
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(OrderStatusActivity.this);
         alertDialog.setTitle("Update Order");
         alertDialog.setMessage("Please choose status");
 

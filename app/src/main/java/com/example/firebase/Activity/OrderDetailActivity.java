@@ -11,7 +11,7 @@ import com.example.firebase.Common.Common;
 import com.example.firebase.R;
 import com.example.firebase.ViewHolder.OrderDetailAdapter;
 
-public class OrderDetail extends AppCompatActivity {
+public class OrderDetailActivity extends AppCompatActivity {
 
     TextView order_id,order_phone,order_address,order_total;
     String order_id_value = "";

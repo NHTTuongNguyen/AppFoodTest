@@ -37,7 +37,7 @@ import java.util.Locale;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Cart extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
@@ -45,7 +45,7 @@ public class Cart extends AppCompatActivity {
     DatabaseReference requests;
 
     TextView  txtTotalPrice,txtNotData;
-    Button btnPlace;
+    Button btnPlace,btnRemoveCart;
     List<Order> carts = new ArrayList<>();
     CartAdapter adapter;
 
@@ -72,6 +72,7 @@ public class Cart extends AppCompatActivity {
         txtNotData = findViewById(R.id.textviewkhongcodulieu);
         txtTotalPrice = findViewById(R.id.total);
         btnPlace = findViewById(R.id.btnPlaceOrder);
+        btnRemoveCart = findViewById(R.id.btnRemoveCart);
         btnPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +80,18 @@ public class Cart extends AppCompatActivity {
             }
 
 
+        });
+        btnRemoveCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (carts.size() >0) {
+                    Database database = new Database(CartActivity.this);
+                    database.removeAllCart();
+                    loadListCart();
+                }else {
+                    Toast.makeText(CartActivity.this, "Cart is null", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
         loadListCart();
     }
@@ -123,7 +136,7 @@ public class Cart extends AppCompatActivity {
         if (carts.size() >0) {
             showAlertDialog();
         } else{
-            Toast.makeText(Cart.this, "Your Cart Empty !!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CartActivity.this, "Your Cart Empty !!!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -141,7 +154,7 @@ public class Cart extends AppCompatActivity {
     }
 
     private void showAlertDialog() {
-        AlertDialog.Builder alerdialog = new AlertDialog.Builder(Cart.this);
+        AlertDialog.Builder alerdialog = new AlertDialog.Builder(CartActivity.this);
         alerdialog.setTitle("One more step !");
         alerdialog.setMessage("Enter your address :): ");
         ///////////////
@@ -178,9 +191,9 @@ public class Cart extends AppCompatActivity {
                         .setValue(request);
 
                 new Database(getBaseContext()).cleanCart();
-                Intent i = new Intent(Cart.this,Home.class);
+                Intent i = new Intent(CartActivity.this, HomeActivity.class);
                 startActivity(i);
-                Toast.makeText(Cart.this, "Order Done !!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CartActivity.this, "Order Done !!!", Toast.LENGTH_SHORT).show();
                 finish();
 
 
@@ -216,6 +229,6 @@ public class Cart extends AppCompatActivity {
         for (Order item:carts)
             new Database(this).addToCart(item);
         loadListCart();
-
+//        ((FoodList)this).setCount();
     }
 }

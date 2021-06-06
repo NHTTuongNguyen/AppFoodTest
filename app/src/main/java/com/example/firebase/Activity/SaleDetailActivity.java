@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class SaleDetail extends AppCompatActivity {
+public class SaleDetailActivity extends AppCompatActivity {
     ImageView img_Sale_Detail_img;
 
     TextView txt_Sale_Detail_Name,txt_Sale_Detail_Price,txt_Sale_Detail_Des;
@@ -50,7 +50,7 @@ public class SaleDetail extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SaleDetail.this,Cart.class);
+                Intent intent = new Intent(SaleDetailActivity.this, CartActivity.class);
                 startActivity(intent);
             }
         });
@@ -78,7 +78,7 @@ public class SaleDetail extends AppCompatActivity {
                         currentSale.getImage()
 
                 ));
-                Toast.makeText(SaleDetail.this, "Add To Cart", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SaleDetailActivity.this, "Add To Cart", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -5,10 +5,9 @@
     android:orientation="vertical"
     android:background="@android:color/white"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:id="@+id/swipe_layout"
-    tools:context=".Activity.Cart">
+    tools:context=".Activity.CartActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -96,19 +95,37 @@
                                 android:textColor="@android:color/black"
                                 android:textSize="28sp" />
                         </LinearLayout>
-                        <Button
-                            android:id="@+id/btnPlaceOrder"
+                        <LinearLayout
+                            android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="@drawable/buttonsingup"
-                            android:text="Order now"
-                            android:elevation="10dp"
-                            android:textSize="18dp"
-                            android:textColor="#fff" />
+                            android:orientation="horizontal"
+                            android:layout_alignParentBottom="true">
+                            <Button
+                                android:layout_margin="@dimen/dimen_10"
+                                android:id="@+id/btnPlaceOrder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/buttonsingup"
+                                android:text="Order now"
+                                android:elevation="10dp"
+                                android:textSize="18dp"
+                                android:textColor="#fff" />
+                            <Button
+                                android:layout_margin="@dimen/dimen_10"
+                                android:id="@+id/btnRemoveCart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/buttonsingup"
+                                android:text="RemoveCart"
+                                android:elevation="10dp"
+                                android:textSize="18dp"
+                                android:textColor="#fff" />
+                        </LinearLayout>
+
+
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

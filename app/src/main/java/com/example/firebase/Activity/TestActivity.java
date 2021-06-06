@@ -7,7 +7,7 @@ import com.example.firebase.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Test extends AppCompatActivity {
+public class TestActivity extends AppCompatActivity {
 
 
 

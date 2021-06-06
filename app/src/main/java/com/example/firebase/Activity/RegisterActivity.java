@@ -22,7 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     EditText et_name,et_password,et_phone,et_email;
     Button bt_register;
     ImageView imageView_Register;
@@ -40,7 +40,7 @@ public class Register extends AppCompatActivity {
         imageView_Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Register.this,Login.class);
+                Intent i = new Intent(RegisterActivity.this,Login.class);
                 startActivity(i);
             }
         });
@@ -58,7 +58,7 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Enter Email", Toast.LENGTH_SHORT).show();
                         return;
                     }else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                        Toast.makeText(Register.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
                         return ;
                     }
 
@@ -67,7 +67,7 @@ public class Register extends AppCompatActivity {
                         return;
                     }
                     if (phone.length()<10){
-                        Toast.makeText(Register.this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     if (TextUtils.isEmpty(name)) {
@@ -88,13 +88,13 @@ public class Register extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (dataSnapshot.child(et_phone.getText().toString()).exists()) {
-                                Toast.makeText(Register.this, "User was already registered", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "User was already registered", Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 User user = new User(et_name.getText().toString(), et_password.getText().toString(), et_email.getText().toString());
 
                                 table_user.child(et_phone.getText().toString()).setValue(user);
-                                Toast.makeText(Register.this, "Register successfully !!!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Register successfully !!!", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
                         }
@@ -106,7 +106,7 @@ public class Register extends AppCompatActivity {
                     });
                 }
                 else {
-                    Toast.makeText(Register.this, "Please Check Your Connection", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Please Check Your Connection", Toast.LENGTH_SHORT).show();
                 }
             }
 

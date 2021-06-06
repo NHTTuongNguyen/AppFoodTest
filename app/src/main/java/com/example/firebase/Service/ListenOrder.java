@@ -14,7 +14,7 @@ import androidx.core.app.NotificationCompat;
 
 import com.example.firebase.Common.Common;
 import com.example.firebase.Model.Request;
-import com.example.firebase.Activity.OrderStatus;
+import com.example.firebase.Activity.OrderStatusActivity;
 import com.example.firebase.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -64,7 +64,7 @@ public class ListenOrder extends Service implements ChildEventListener {
         int NOTIFICATION_ID = 234;
 
 
-        Intent intent = new Intent(getBaseContext(), OrderStatus.class);
+        Intent intent = new Intent(getBaseContext(), OrderStatusActivity.class);
         intent.putExtra("userPhone",request.getPhone());//////////
         PendingIntent contentIntent = PendingIntent.getActivity(getBaseContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder builder   = new NotificationCompat.Builder(getBaseContext());

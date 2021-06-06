@@ -66,7 +66,7 @@ public class UIProfile extends AppCompatActivity {
         img_profile_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UIProfile.this, EditUIProfile.class);
+                Intent intent = new Intent(UIProfile.this, EditUIProfileActivity.class);
                 intent.putExtra("MyTeamId", currentteam);
                 startActivity(intent);
 //                String name = txt_name.getText().toString();

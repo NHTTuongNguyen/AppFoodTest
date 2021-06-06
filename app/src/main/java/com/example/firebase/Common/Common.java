@@ -10,7 +10,7 @@ import android.content.Context;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class Common {
+    public class Common {
     public  static User currentUser;
     public  static Request currentRequest;
     public static final String UPDATE = "Update";

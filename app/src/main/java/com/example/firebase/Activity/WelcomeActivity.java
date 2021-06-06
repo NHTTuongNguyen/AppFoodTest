@@ -1,7 +1,6 @@
 package com.example.firebase.Activity;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -9,9 +8,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.firebase.R;
 
-public class Welcome extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
     private static  int SPLASH_SCREEN = 5000;
 
     @Override
@@ -28,7 +29,7 @@ public class Welcome extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Welcome.this,MainActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
             }

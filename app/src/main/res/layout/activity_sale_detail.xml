@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Activity.SaleDetail"
+    tools:context=".Activity.SaleDetailActivity"
     android:orientation="vertical">
 
     <androidx.core.widget.NestedScrollView

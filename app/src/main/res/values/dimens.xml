@@ -8,4 +8,48 @@
 
 
     <integer name="animation_duration_medium">3000</integer>
+
+    <dimen name="dimen_5">5dp</dimen>
+    <dimen name="dimen_10">10dp</dimen>
+    <dimen name="dimen_13">12dp</dimen>
+    <dimen name="dimen_15">15dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_20">20dp</dimen>
+    <dimen name="dimen_25">25dp</dimen>
+    <dimen name="dimen_30">30dp</dimen>
+    <dimen name="dimen_34">34dp</dimen>
+
+    <dimen name="dimen_35">35dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
+    <dimen name="dimen_45">45dp</dimen>
+    <dimen name="dimen_50">50dp</dimen>
+    <dimen name="dimen_55">55dp</dimen>
+    <dimen name="dimen_60">60dp</dimen>
+    <dimen name="dimen_65">65dp</dimen>
+    <dimen name="dimen_70">70dp</dimen>
+    <dimen name="dimen_75">75dp</dimen>
+    <dimen name="dimen_80">80dp</dimen>
+    <dimen name="dimen_85">85dp</dimen>
+    <dimen name="dimen_90">90dp</dimen>
+    <dimen name="dimen_95">95dp</dimen>
+    <dimen name="dimen_100">100dp</dimen>
+
+
+
+
+
+
+    <dimen name="text_normal">14sp</dimen>
+    <dimen name="heading_3">16sp</dimen>
+    <dimen name="heading_2">18sp</dimen>
+    <dimen name="heading_1">20sp</dimen>
+    <dimen name="title">24sp</dimen>
+    <dimen name="dimen_18">18dp</dimen>
+    <dimen name="dimen_1">1dp</dimen>
+    <dimen name="dimen_17">17dp</dimen>
+    <dimen name="dimen_3">3dp</dimen>
+    <dimen name="dimen_4">4dp</dimen>
+    <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_12">12dp</dimen>
+    <dimen name="dimen_52">52dp</dimen>
 </resources>

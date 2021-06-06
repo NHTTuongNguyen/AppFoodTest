@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
-
-
 //        printKeyHash();
 
         bt_dangnhap = findViewById(R.id.bt_dangnhapne);
@@ -78,12 +76,13 @@ public class MainActivity extends AppCompatActivity {
             table_user.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    alertDialog.dismiss();
                     //check if user  not exist  in database
                     if (dataSnapshot.child(phone).exists()) {
                         User user = dataSnapshot.child(phone).getValue(User.class);
                         user.setPhone(phone);
                         if (user.getPassword().equals(pwd)) {
-                            Intent intent = new Intent(MainActivity.this, Home.class);
+                            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                             Common.currentUser = user;
                             startActivity(intent);
                             finish();
