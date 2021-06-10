@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         imageView_Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(RegisterActivity.this, LoginDev.class);
+                Intent i = new Intent(RegisterActivity.this, LoginAC.class);
                 startActivity(i);
             }
         });
