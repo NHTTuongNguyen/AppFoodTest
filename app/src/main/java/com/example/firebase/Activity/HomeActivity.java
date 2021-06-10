@@ -468,7 +468,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             /// delete Remember me user and password
             Paper.book().destroy();
             ///out
-            Intent activityOut = new Intent(HomeActivity.this,Login.class);
+            Intent activityOut = new Intent(HomeActivity.this, LoginActivity.class);
             activityOut.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(activityOut);
 

@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         bt_dangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i2 = new Intent(MainActivity.this,Login.class);
+                Intent i2 = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(i2);
             }
         });
