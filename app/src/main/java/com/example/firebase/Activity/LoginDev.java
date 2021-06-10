@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import io.paperdb.Paper;
 
-public class LoginMaster extends AppCompatActivity {
+public class LoginDev extends AppCompatActivity {
     EditText et_name,et_email,et_password,et_cpassword,edtPhone;
     Button bt_login;
     CheckBox checkBox;
@@ -51,7 +51,7 @@ public class LoginMaster extends AppCompatActivity {
         img_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginMaster.this, RegisterActivity.class);
+                Intent i = new Intent(LoginDev.this, RegisterActivity.class);
                 startActivity(i);
             }
         });
@@ -59,7 +59,7 @@ public class LoginMaster extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i  = new Intent(LoginMaster.this, RegisterActivity.class);
+                Intent i  = new Intent(LoginDev.this, RegisterActivity.class);
                 startActivity(i);
             }
         });
@@ -97,18 +97,18 @@ public class LoginMaster extends AppCompatActivity {
                                 User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
                                 user.setPhone(edtPhone.getText().toString());
                                 if (user.getPassword().equals(et_password.getText().toString())) {
-                                    Intent intent = new Intent(LoginMaster.this, HomeActivity.class);
+                                    Intent intent = new Intent(LoginDev.this, HomeActivity.class);
                                     Common.currentUser = user;
                                     startActivity(intent);
                                     finish();
 
 //                                    table_user.removeEventListener(this);
-                                    Toast.makeText(LoginMaster.this, "Log in successfull !!!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginDev.this, "Log in successfull !!!", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(LoginMaster.this, "Wrong Password ", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginDev.this, "Wrong Password ", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
-                                Toast.makeText(LoginMaster.this, "User is not register", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginDev.this, "User is not register", Toast.LENGTH_SHORT).show();
                             }
 
 
@@ -120,7 +120,7 @@ public class LoginMaster extends AppCompatActivity {
                     });
                 }
                 else {
-                    Toast.makeText(LoginMaster.this, "Please Check Your Connection", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginDev.this, "Please Check Your Connection", Toast.LENGTH_SHORT).show();
                 }
             }
 
