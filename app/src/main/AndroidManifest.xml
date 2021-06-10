@@ -136,7 +136,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.LoginActivity"
+            android:name=".Activity.LoginMaster"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeLogin" />
 
